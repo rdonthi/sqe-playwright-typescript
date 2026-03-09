@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+dist/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Test reports
+reports/
+allure-results/
+allure-report/
+playwright-report/
+test-results/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-*
+
+# Project specific
+project_structure_clean.txt
+temp/
+tmp/

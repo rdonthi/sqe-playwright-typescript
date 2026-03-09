@@ -1,0 +1,29 @@
+{
+  "name": "sqe-playwright-typescript",
+  "version": "1.0.0",
+  "scripts": {
+  "test": "cucumber-js --config config/cucumber.js",
+  "test:api": "npm test -- --tags '@api'",
+  "test:ui": "npm test -- --tags '@ui'",
+  "test:ci": "cross-env CI=true HEADLESS=true npm test -- --tags '@api or @ui'",
+  "report:html": "open reports/cucumber-report.html",
+  "report:allure": "node scripts/generate-allure-report.js && allure generate allure-results --clean -o allure-report && allure open allure-report",
+  "test:report": "npm test && npm run report:allure",
+  "clean": "rm -rf reports allure-results allure-report"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.58.2"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.7.0",
+    "@cucumber/pretty-formatter": "^3.2.0",
+    "@types/node": "^25.3.3",
+    "@types/node-fetch": "^2.6.13",
+    "allure-commandline": "^2.37.0",
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.3.1",
+    "node-fetch": "^2.7.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
